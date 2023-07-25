@@ -1,29 +1,29 @@
-import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { createComponentFactory, Spectator } from '@ngneat/spectator';
 import { AppComponent } from './app.component';
+import { MockComponents } from 'ng-mocks';
+import { ErrorPopupComponent, SpinnerComponent } from 'src/components';
 
 describe('AppComponent', () => {
-  beforeEach(() => TestBed.configureTestingModule({
+  let spectator: Spectator<AppComponent>;
+  let component: AppComponent;
+
+  const factory = createComponentFactory({
+    component: AppComponent,
+    declarations: [MockComponents(SpinnerComponent, ErrorPopupComponent)],
     imports: [RouterTestingModule],
-    declarations: [AppComponent]
-  }));
-
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'star-wars-angular'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('star-wars-angular');
+  beforeEach(() => {
+    spectator = factory();
+    component = spectator.component;
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('star-wars-angular app is running!');
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should render header', () => {
+    expect('header').toExist();
   });
 });

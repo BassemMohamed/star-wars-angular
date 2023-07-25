@@ -1,27 +1,31 @@
-# StarWarsAngular
+# Star Wars Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
+This is a small UI tool that uses the [SWAPI](https://swapi.dev/documentation) API to render Star wars movies and characters.
 
-## Development server
+Note: The swapi API can be quite slow.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Prerequisites
 
-## Code scaffolding
+You need to have the following tools installed to be able to run this project.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Node
+2. NPM
 
-## Build
+## How to run the project?
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. First off, Make sure to install all the required npm packages using the command `npm install`.
+2. Run the local server using the command `npm run start`.
+3. Go over to `localhost:4200`.
 
-## Running unit tests
+## Technologies used in the project
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Angular
+2. Angular routing
+3. I didn't end up using any UI library as I have created quite simple UI.
+4. Ngrx for state managment.
+5. Karma & Jasmine for testing.
+6. ESLint for linting.
 
-## Running end-to-end tests
+## Contact
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+This project was created by [Bassem Ibrahim](https://bassemmohamed.github.io/), Feel free to reach me over at `bassem.i@protonmail.com`.

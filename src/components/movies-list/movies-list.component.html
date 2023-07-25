@@ -1,0 +1,20 @@
+<div class="grid">
+  <ng-container *ngFor="let movie of movies$ | async">
+    <div
+      class="card"
+      role="button"
+      tabindex="0"
+      (click)="handleClick(movie.url)"
+      (keyup.enter)="handleClick(movie.url)"
+    >
+      <h3 class="title">{{ movie.title }}</h3>
+
+      <span class="director"><b>Director:</b> {{ movie.director }}</span>
+      <span class="producer"><b>Producer:</b> {{ movie.producer }}</span>
+      <span class="release-data"
+        ><b>Release date:</b> {{ movie.release_date }}</span
+      >
+      <p class="opening-crawl">{{ movie.opening_crawl }}</p>
+    </div>
+  </ng-container>
+</div>

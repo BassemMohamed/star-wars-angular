@@ -1,0 +1,35 @@
+<ng-container *ngIf="character$ | async as character">
+  <h3 class="name">{{ character.name }}</h3>
+
+  <span class="height"><b>Height:</b> {{ character.height }}</span>
+  <span class="mass"><b>Mass:</b> {{ character.mass }}</span>
+  <span class="gender"><b>Gender:</b> {{ character.gender }}</span>
+
+  <div class="grid">
+    <ng-container *ngFor="let movie of movies$ | async">
+      <div
+        *ngIf="movie.status === EntityStatus.Loaded; else placeholder"
+        class="card"
+        role="button"
+        tabindex="0"
+        (click)="handleClick(movie.url)"
+        (keyup.enter)="handleClick(movie.url)"
+      >
+        <h3 class="title">{{ movie.title }}</h3>
+
+        <span><b>Director:</b> {{ movie.director }}</span>
+        <span><b>Producer:</b> {{ movie.producer }}</span>
+        <span><b>Release date:</b> {{ movie.release_date }}</span>
+      </div>
+
+      <ng-template #placeholder>
+        <div class="card placeholder pulse">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </ng-template>
+    </ng-container>
+  </div>
+</ng-container>
