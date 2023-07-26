@@ -1,6 +1,12 @@
+@font-face {
+  font-family: Aleo;
+  src: url(./assets/Aleo.ttf);
+}
+
 /* You can add global styles to this file, and also import other style files */
 body {
   margin: 0;
+  font-family: Aleo, sans-serif;
 }
 
 h1,
