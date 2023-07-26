@@ -1,5 +1,8 @@
 <ng-container *ngIf="movie$ | async as movie">
-  <h3 class="title">{{ movie.title }}</h3>
+  <h3 class="title">
+    <i class="fa-solid fa-ticket"></i>
+    {{ movie.title }}
+  </h3>
 
   <span class="director"><b>Director:</b> {{ movie.director }}</span>
   <span class="producer"><b>Producer:</b> {{ movie.producer }}</span>
@@ -18,7 +21,10 @@
         (click)="handleClick(character.url)"
         (keyup.enter)="handleClick(character.url)"
       >
-        <h3 class="name">{{ character.name }}</h3>
+        <h3 class="name">
+          <i class="fa-solid fa-user"></i>
+          {{ character.name }}
+        </h3>
 
         <span><b>Height:</b> {{ character.height }}</span>
         <span><b>Mass:</b> {{ character.mass }}</span>
